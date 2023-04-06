@@ -1,3 +1,4 @@
+import 'package:no_screenshot/no_screenshot.dart';
 import 'package:sada_payra/constants.dart';
 
 import '../../../models/trip_model.dart';
@@ -16,6 +17,13 @@ class DownTripBody extends StatefulWidget {
 
 class _DownTripBodyState extends State<DownTripBody> {
   List<TripModel>? _downTripsList;
+  final _noScreenshot = NoScreenshot.instance;
+
+  @override
+  void initState() {
+    _noScreenshot.screenshotOn();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
