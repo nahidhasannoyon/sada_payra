@@ -41,6 +41,9 @@ dependencies:
   flutter_flip_card: ^0.0.4
   no_screenshot: ^0.0.1+6
   animated_background: ^2.0.0
+  wave: ^0.2.2
+  awesome_ripple_animation: ^0.6.0
+  flutter_animate: ^4.1.1+1
 
 dev_dependencies:
   flutter_test:
