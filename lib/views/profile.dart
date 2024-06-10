@@ -220,6 +220,7 @@ class UserImage extends StatelessWidget {
         width: 130,
         height: 130,
         child: RippleAnimation(
+          size: const Size(150, 150), //NOTE -  newly added
           repeat: true,
           color: Colors.green,
           minRadius: 60,

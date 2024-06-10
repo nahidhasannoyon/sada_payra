@@ -11,23 +11,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Satoshi',
-        primaryColor: const Color.fromRGBO(248, 245, 242, 1),
-        iconTheme: const IconThemeData(
-          color: Color.fromRGBO(248, 245, 242, 1),
-        ),
-        colorScheme: ColorScheme.fromSwatch()
-            .copyWith(
-              secondary: const Color.fromRGBO(7, 128, 128, 1),
-            )
-            .copyWith(
-              surface: const Color.fromRGBO(248, 245, 242, 1),
-            ),
-      ),
-      home: const HomeScreen(),
+      // theme: ThemeData(
+      //   fontFamily: 'Satoshi',
+      //   primaryColor: const Color.fromRGBO(248, 245, 242, 1),
+      //   iconTheme: const IconThemeData(
+      //     color: Color.fromRGBO(248, 245, 242, 1),
+      //   ),
+      //   colorScheme: ColorScheme.fromSwatch()
+      //       .copyWith(
+      //         secondary: const Color.fromRGBO(7, 128, 128, 1),
+      //       )
+      //       .copyWith(
+      //         surface: const Color.fromRGBO(248, 245, 242, 1),
+      //       ),
+      // ),
+      home: HomeScreen(),
     );
   }
 }
