@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               secondary: const Color.fromRGBO(7, 128, 128, 1),
             )
             .copyWith(
-              background: const Color.fromRGBO(248, 245, 242, 1),
+              surface: const Color.fromRGBO(248, 245, 242, 1),
             ),
       ),
       home: const HomeScreen(),

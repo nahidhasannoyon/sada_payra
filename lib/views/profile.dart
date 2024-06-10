@@ -32,7 +32,7 @@ class _ProfileBodyState extends State<ProfileBody>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: AnimatedBackground(
         vsync: this,
         behaviour: RandomParticleBehaviour(
@@ -103,12 +103,12 @@ class BothSide extends StatelessWidget {
               ),
               const TopWave(),
               const BottomWave(),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     InstituteNameWithLogo(),
                     SizedBox(
                       height: 10,

@@ -6,7 +6,6 @@ import '../../../controllers/trip_provider.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
-
 class UpTripBody extends StatefulWidget {
   static const routeName = 'up-trips';
   const UpTripBody({super.key});
@@ -27,9 +26,9 @@ class _UpTripBodyState extends State<UpTripBody> {
 
   @override
   Widget build(BuildContext context) {
-    var isSigned = true;
+    // var isSigned = true;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: FutureBuilder(
         future: fetchUpTripList(),
         builder: (
@@ -59,133 +58,129 @@ class _UpTripBodyState extends State<UpTripBody> {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView.builder(
-                  itemCount: _upTripsList?.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ExpansionTileCard(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(15.0)),
-                        baseColor: const Color.fromARGB(255, 151, 173, 152),
-                        elevation: 10,
-                        initialElevation: 10.0,
-                        shadowColor: Colors.black,
-                        leading: Text(
-                          _upTripsList![index].startTime,
-                          style: const TextStyle(fontSize: 20.0),
-                        ),
-                        title: Text(
-                          _upTripsList![index].startPoint,
-                          style: const TextStyle(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        subtitle: Text(
-                          _upTripsList![index].remarks,
-                          style: const TextStyle(
-                            fontSize: 14.0,
-                          ),
-                        ),
-                        children: <Widget>[
-                          const Divider(
-                            thickness: 1,
-                            height: 2.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0,
-                              vertical: 8.0,
-                            ),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    "Route: ${_upTripsList![index].route}",
-                                  ),
-                                  Text(
-                                    "Mode: ${_upTripsList![index].mode}",
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          isSigned
-                              ? ButtonBar(
-                                  alignment: MainAxisAlignment.spaceAround,
-                                  buttonHeight: 52.0,
-                                  buttonMinWidth: 90.0,
-                                  children: <Widget>[
-                                    TextButton(
-                                      onPressed: () {
-                                        updateTripSheet(
-                                          context,
-                                          _upTripsList![index],
-                                        );
-                                      },
-                                      child: Column(
-                                        children: const <Widget>[
-                                          Icon(Icons.edit_outlined),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 2.0),
-                                          ),
-                                          Text('Edit'),
-                                        ],
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () async {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          const SnackBar(
-                                            content: Text('Deleting Data ....'),
-                                          ),
-                                        );
-                                        deleteUpTrip(
-                                          _upTripsList![index].id,
-                                        );
-                                        setState(() {
-                                          fetchUpTripList();
-                                        });
-                                      },
-                                      child: Column(
-                                        children: const <Widget>[
-                                          Icon(Icons.delete_forever_outlined),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 2.0),
-                                          ),
-                                          Text('Delete'),
-                                        ],
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        // todo add notifyAll(_upTripsList![index]);
-                                      },
-                                      child: Column(
-                                        children: const <Widget>[
-                                          Icon(Icons.notification_add_outlined),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 2.0),
-                                          ),
-                                          Text('Notify All'),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              : const SizedBox(),
-                        ],
+              itemCount: _upTripsList?.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ExpansionTileCard(
+                    borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+                    baseColor: const Color.fromARGB(255, 151, 173, 152),
+                    elevation: 10,
+                    initialElevation: 10.0,
+                    shadowColor: Colors.black,
+                    leading: Text(
+                      _upTripsList![index].startTime,
+                      style: const TextStyle(fontSize: 20.0),
+                    ),
+                    title: Text(
+                      _upTripsList![index].startPoint,
+                      style: const TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
                       ),
-                    );
-                  },
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                ),
+                    ),
+                    subtitle: Text(
+                      _upTripsList![index].remarks,
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
+                    children: <Widget>[
+                      const Divider(
+                        thickness: 1,
+                        height: 2.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0,
+                          vertical: 8.0,
+                        ),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Column(
+                            children: [
+                              Text(
+                                "Route: ${_upTripsList![index].route}",
+                              ),
+                              Text(
+                                "Mode: ${_upTripsList![index].mode}",
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // isSigned
+                      //     ?
+                      ButtonBar(
+                        alignment: MainAxisAlignment.spaceAround,
+                        buttonHeight: 52.0,
+                        buttonMinWidth: 90.0,
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              updateTripSheet(
+                                context,
+                                _upTripsList![index],
+                              );
+                            },
+                            child: const Column(
+                              children: <Widget>[
+                                Icon(Icons.edit_outlined),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                ),
+                                Text('Edit'),
+                              ],
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Deleting Data ....'),
+                                ),
+                              );
+                              deleteUpTrip(
+                                _upTripsList![index].id,
+                              );
+                              setState(() {
+                                fetchUpTripList();
+                              });
+                            },
+                            child: const Column(
+                              children: <Widget>[
+                                Icon(Icons.delete_forever_outlined),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                ),
+                                Text('Delete'),
+                              ],
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // todo add notifyAll(_upTripsList![index]);
+                            },
+                            child: const Column(
+                              children: <Widget>[
+                                Icon(Icons.notification_add_outlined),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                ),
+                                Text('Notify All'),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                      // : const SizedBox(),
+                    ],
+                  ),
+                );
+              },
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+            ),
           );
         },
       ),
