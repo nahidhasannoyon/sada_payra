@@ -111,10 +111,10 @@ class _DownTripBodyState extends State<DownTripBody> {
                       ),
                       // isSigned
                       //     ?
-                      ButtonBar(
+                      OverflowBar(
                         alignment: MainAxisAlignment.spaceAround,
-                        buttonHeight: 52.0,
-                        buttonMinWidth: 90.0,
+                        // buttonHeight: 52.0,
+                        // buttonMinWidth: 90.0,
                         children: <Widget>[
                           TextButton(
                             onPressed: () {

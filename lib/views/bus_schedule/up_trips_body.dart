@@ -111,10 +111,10 @@ class _UpTripBodyState extends State<UpTripBody> {
                       ),
                       // isSigned
                       //     ?
-                      ButtonBar(
+                      OverflowBar(
                         alignment: MainAxisAlignment.spaceAround,
-                        buttonHeight: 52.0,
-                        buttonMinWidth: 90.0,
+                        // buttonHeight: 52.0,
+                        // buttonMinWidth: 90.0,
                         children: <Widget>[
                           TextButton(
                             onPressed: () {

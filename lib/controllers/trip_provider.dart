@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:sada_payra/secrets.dart';
+// import 'package:sada_payra/secrets.dart';
 
 import '../models/trip_model.dart';
 import 'package:http/http.dart' as http;
 
 // todo add provider with change Notifier
+final String baseApiLink = 'https://sada-payra.com/api';
 
 // * Up Trips
 final List<TripModel> upTripList = [];
